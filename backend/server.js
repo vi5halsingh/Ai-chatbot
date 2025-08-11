@@ -26,14 +26,14 @@ io.on("connection", (socket) => {
       ]
     }
   )
-  console.log(chatHistory)
-const response =await generatResponse(chatHistory)
-chatHistory.push({
+  const response =await generatResponse(chatHistory)
+  chatHistory.push({
   role:'model',
   parts:[
     {text:response}
   ]
 })
+console.log(chatHistory)     
 socket.emit("aiResponse",{response})
 // console.log("response:",response)
   })

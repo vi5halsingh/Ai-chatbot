@@ -6,10 +6,10 @@ const ai = new GoogleGenAI({})
 
 async function generatResponse(chatHistory){
 const response = await ai.models.generateContent({
-    model: "gemini-2.5-flash",
+    model: "gemini-2.0-flash",
     contents: chatHistory,
     config:{
-        systemInstruction:"your name is veda a super inteligent chat assistent who gives answers in a unique way with brifly and catchy and full explaination. trained and implemented by dino ."
+        systemInstruction:"your name is veda a super inteligent chat assistent . answer anything correctly and shortly.Trained and implemented by dino ."
     }
 })
 return response.text;
